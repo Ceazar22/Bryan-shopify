@@ -62,14 +62,14 @@ product-info {
 
 @media screen and (min-width: 990px) {
   .product--large:not(.product--no-media) .product__media-wrapper {
-    max-width: 65%;
-    width: calc(65% - var(--grid-desktop-horizontal-spacing) / 2);
+    max-width: 50%;
+    width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
   .product--large:not(.product--no-media) .product__info-wrapper {
     padding: 0 0 0 4rem;
-    max-width: 35%;
-    width: calc(35% - var(--grid-desktop-horizontal-spacing) / 2);
+    max-width: 50%;
+    width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
   .product--large:not(.product--no-media).product--right .product__info-wrapper {
@@ -289,7 +289,7 @@ a.product__text {
 
 @media screen and (min-width: 750px) {
   .product__info-container {
-    max-width: 60rem;
+    max-width: 80rem;
   }
 
   .product__info-container .price--on-sale .price-item--regular {
@@ -1478,6 +1478,289 @@ a.product__text {
   text-transform: capitalize;
 }
 
+/* ----------------------------------------------------------------- */
+/* Modern product page styling (visual refresh only — layout/grid unchanged) */
+/* ----------------------------------------------------------------- */
+
+.product__media-wrapper .product-media-container {
+  border-radius: var(--media-radius, 1.2rem);
+  overflow: hidden;
+  transition: box-shadow var(--duration-default) ease;
+}
+
+.product__media-wrapper .product-media-container .media {
+  transition: transform var(--duration-long) ease;
+}
+
+.product__modal-opener--image:hover .media img,
+.product__modal-opener--image:hover .media model-viewer {
+  transform: scale(1.03);
+}
+
+.thumbnail {
+  border-radius: 0.8rem;
+  transition: transform var(--duration-short) ease, opacity var(--duration-short) ease,
+    box-shadow var(--duration-short) ease;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.4rem 1rem rgba(var(--color-shadow), 0.15);
+}
+
+.thumbnail[aria-current] {
+  box-shadow: 0 0 0 0.2rem #d4af37;
+  border-color: #d4af37;
+}
+
+.product__info-container {
+  letter-spacing: 0.01rem;
+}
+
+.product__title > a > .h1,
+.product__title h1 {
+  font-weight: 600;
+  letter-spacing: -0.01rem;
+}
+
+.product [id^='price-'] .price {
+  font-weight: 600;
+}
+
+.product .price--on-sale .price-item--regular {
+  opacity: 0.55;
+}
+
+.product .price__badge-sale,
+.product .price__badge-sold-out {
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  letter-spacing: 0.04rem;
+}
+
+.product .product-form__input--pill input[type='radio'] + label {
+  border-radius: 999px;
+  transition: border var(--duration-short) ease, transform var(--duration-short) ease,
+    background-color var(--duration-short) ease;
+}
+
+.product .product-form__input--pill input[type='radio'] + label:hover {
+  transform: translateY(-0.1rem);
+}
+
+.product .product-form__input--swatch .swatch-input__input + .swatch-input__label {
+  transition: transform var(--duration-short) ease;
+}
+
+.product .product-form__input--swatch .swatch-input__input + .swatch-input__label:hover {
+  transform: translateY(-0.1rem);
+}
+
+.product .product-form__submit {
+  transition: transform var(--duration-short) ease, box-shadow var(--duration-short) ease;
+}
+
+.product .product-form__submit:not([disabled]):hover {
+  transform: translateY(-0.15rem);
+}
+
+.product .product__accordion.accordion {
+  border-top: none;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  transition: background-color var(--duration-short) ease;
+}
+
+.product .product__accordion.accordion:first-of-type {
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+}
+
+.product .product__accordion summary {
+  transition: color var(--duration-short) ease;
+  cursor: pointer;
+}
+
+.product .product__accordion summary:hover .accordion__title {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.product .product__accordion .icon-caret {
+  transition: transform var(--duration-short) ease;
+}
+
+.product__inventory {
+  font-weight: 500;
+}
+
+.product .quantity {
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* ----------------------------------------------------------------- */
+/* Dark / premium info panel (gold accent) — layout structure unchanged */
+/* ----------------------------------------------------------------- */
+
+.product__info--premium {
+  --premium-gold: 212 175 55;
+  --premium-gold-light: 247 226 154;
+
+  /* Re-map the theme color tokens so every child (price, pills,
+     buttons, accordion, links) adapts to the dark panel automatically. */
+  --color-foreground: 244 242 236;
+  --color-background: 20 20 27;
+  --color-button: 212 175 55;
+  --color-button-text: 20 20 27;
+  --color-secondary-button: 212 175 55;
+  --color-secondary-button-text: 20 20 27;
+  --color-shadow: 0 0 0;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: rgb(var(--color-foreground));
+  background: linear-gradient(160deg, #1d1d26 0%, #141019 55%, #1b1524 100%);
+  border: 0.1rem solid rgba(var(--premium-gold), 0.28);
+  border-radius: 1.8rem;
+  padding: 3rem 2.6rem;
+  box-shadow: 0 2.4rem 5rem rgba(0, 0, 0, 0.45), inset 0 0.1rem 0 rgba(var(--premium-gold-light), 0.12);
+}
+
+/* Gold accent line along the top edge of the panel */
+.product__info--premium::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 0.3rem;
+  background: linear-gradient(90deg, transparent, rgb(var(--premium-gold)), rgb(var(--premium-gold-light)), transparent);
+  z-index: 1;
+}
+
+@media screen and (min-width: 750px) {
+  .product__info--premium {
+    padding: 4rem 3.4rem;
+  }
+}
+
+/* Decorative gold sparkle cluster, top-right of the panel */
+.product__premium-sparkles {
+  position: absolute;
+  top: -1.4rem;
+  right: -1.4rem;
+  width: 12rem;
+  height: 12rem;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 1.2rem rgba(212, 175, 55, 0.35));
+  animation: premium-sparkle-float 6s ease-in-out infinite;
+}
+
+@keyframes premium-sparkle-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0.6rem) rotate(4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product__premium-sparkles {
+    animation: none;
+  }
+}
+
+/* Keep panel content above the decorative layers */
+.product__info--premium > *:not(.product__premium-sparkles) {
+  position: relative;
+  z-index: 1;
+}
+
+/* The injected SVG is the first child — don't let it steal the spacing reset */
+.product__info--premium > .product__premium-sparkles + * {
+  margin-top: 0;
+}
+
+/* Title pops in light, with a gold-tinted weight */
+.product__info--premium .product__title h1,
+.product__info--premium .product__title .h1 {
+  color: rgb(var(--color-foreground));
+}
+
+/* Gold gradient price */
+.product__info--premium [id^='price-'] .price .price-item {
+  background: linear-gradient(120deg, rgb(var(--premium-gold-light)), rgb(var(--premium-gold)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: rgb(var(--premium-gold));
+}
+
+.product__info--premium .price--on-sale .price-item--regular {
+  -webkit-text-fill-color: rgba(var(--color-foreground), 0.5);
+  background: none;
+  color: rgba(var(--color-foreground), 0.5);
+}
+
+/* Sale / sold-out badges as gold pills */
+.product__info--premium .price__badge-sale {
+  background: linear-gradient(120deg, rgb(var(--premium-gold)), rgb(var(--premium-gold-light)));
+  color: #1a1620;
+  border: none;
+}
+
+/* Gold add-to-cart with a soft glow on hover */
+.product__info--premium .product-form__submit {
+  box-shadow: 0 0.6rem 1.6rem rgba(var(--premium-gold), 0.25);
+}
+
+.product__info--premium .product-form__submit:not([disabled]):hover {
+  box-shadow: 0 0.9rem 2.2rem rgba(var(--premium-gold), 0.45);
+}
+
+/* Variant pills: dark with gold hover/selected */
+.product__info--premium .product-form__input--pill input[type='radio'] + label {
+  border-color: rgba(var(--premium-gold), 0.4);
+}
+
+.product__info--premium .product-form__input--pill input[type='radio'] + label:hover {
+  border-color: rgb(var(--premium-gold));
+}
+
+.product__info--premium .product-form__input--pill input[type='radio']:checked + label {
+  background: linear-gradient(120deg, rgb(var(--premium-gold)), rgb(var(--premium-gold-light)));
+  border-color: rgb(var(--premium-gold-light));
+  color: #1a1620;
+}
+
+/* Accordion dividers in faint gold */
+.product__info--premium .product__accordion.accordion,
+.product__info--premium .product__accordion.accordion:first-of-type {
+  border-color: rgba(var(--premium-gold), 0.18);
+}
+
+.product__info--premium .product__accordion .svg-wrapper,
+.product__info--premium .product__accordion .icon-caret {
+  fill: rgb(var(--premium-gold));
+}
+
+/* "View full details" link reads as a gold call-to-action */
+.product__info--premium .product__view-details {
+  color: rgb(var(--premium-gold-light));
+}
+
+.product__info--premium .product__view-details .icon {
+  color: rgb(var(--premium-gold-light));
+}
+
+/* Quantity stepper border picks up the gold theme */
+.product__info--premium .quantity {
+  border-color: rgba(var(--premium-gold), 0.35);
+}
+
 @media screen and (forced-colors: active) {
   .recipient-fields > hr {
     border-top: 0.1rem solid rgb(var(--color-background));
@@ -1491,4 +1774,40 @@ a.product__text {
   .recipient-form > input[type='checkbox']:checked + label .icon-checkmark {
     border: none;
   }
+}
+
+/* ----------------------------------------------------------------- */
+/* Brand fonts — Recoleta Bold (headings) + Volte Medium (body)        */
+/* Add the matching woff2 files to /assets to activate (see notes).    */
+/* ----------------------------------------------------------------- */
+@font-face {
+  font-family: 'Recoleta';
+  src: url('Recoleta-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Volte';
+  src: url('Volte-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ym-font-head: 'Recoleta', 'Fraunces', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --ym-font-body: 'Volte', 'Mulish', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.product__info--premium {
+  font-family: var(--ym-font-body);
+}
+
+.product__info--premium .product__title h1,
+.product__info--premium .product__title .h1 {
+  font-family: var(--ym-font-head);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }

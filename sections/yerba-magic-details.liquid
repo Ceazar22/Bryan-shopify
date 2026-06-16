@@ -1,383 +1,523 @@
+{%- comment -%}
+  Yerba Magic — long-form product story / conversion content.
+  Framework: 3-4 colors max (green, strawberry pink, gold) over alternating
+  light (cream) and dark (ink) backgrounds. Recoleta headings / Volte body.
+  All icons are inline SVG (rounded line icons, currentColor). No emoji.
+{%- endcomment -%}
+
+{%- capture ico_check -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>{%- endcapture -%}
+{%- capture ico_x -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>{%- endcapture -%}
+{%- capture ico_star -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.1-6.46-4.69-4.58 6.49-.94z"/></svg>{%- endcapture -%}
+{%- capture ico_bolt -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4.5 13.5a.6.6 0 0 0 .5 1H11l-1 7.5L19.5 10a.6.6 0 0 0-.5-1H13z"/></svg>{%- endcapture -%}
+{%- capture ico_brain -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a4 4 0 0 0-4 4c0 1.4.6 2.5 1.4 3.4.5.5.6 1 .6 1.7V16a2 2 0 0 0 2 2 2 2 0 0 0 2-2v-1.9c0-.7.1-1.2.6-1.7C15.4 11.5 16 10.4 16 9a4 4 0 0 0-4-4Z"/><path d="M9.6 21h4.8"/></svg>{%- endcapture -%}
+{%- capture ico_gut -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v3.5A3.5 3.5 0 0 0 11.5 10 3.5 3.5 0 0 1 15 13.5 3.5 3.5 0 0 1 11.5 17 4 4 0 0 1 7.5 13"/><path d="M16 6.5A3.5 3.5 0 0 1 12.5 10"/></svg>{%- endcapture -%}
+{%- capture ico_leaf -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-7 5-12 14-12 0 9-5 14-12 14a6 6 0 0 1-2-.3Z"/><path d="M5 19c1-3 3-5.2 6-6.5"/></svg>{%- endcapture -%}
+{%- capture ico_scoop -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5a5 5 0 0 1 0 10h-1.2L11.7 21h-3l-1.1-7.5H6.5a5 5 0 0 1 0-10Z"/></svg>{%- endcapture -%}
+{%- capture ico_shaker -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.5h6M8.2 6.5h7.6l-1 13.2a2 2 0 0 1-2 1.8h-1.6a2 2 0 0 1-2-1.8L8.2 6.5Z"/><path d="M8 10.5h8"/></svg>{%- endcapture -%}
+{%- capture ico_cup -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7.5h12l-1.1 11.7a2 2 0 0 1-2 1.8H9.1a2 2 0 0 1-2-1.8L6 7.5Z"/><path d="M6 7.5h12"/><path d="M14.5 3l-2 4.5"/></svg>{%- endcapture -%}
+{%- capture ico_straw -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8c4 0 6.7 2.6 6.7 6.2C18.7 18 15.4 21 12 21s-6.7-3-6.7-6.8C5.3 10.6 8 8 12 8Z"/><path d="M9 5c1 .9 2 1.4 3 1.4S14 5.9 15 5"/><path d="M12 6.4V3"/></svg>{%- endcapture -%}
+{%- capture ico_coffee -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.5h13v3.5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8.5Z"/><path d="M17 9.5h1.8a2 2 0 0 1 0 4H17"/><path d="M7 3.2c0 1-1 1.2-1 2.2M11 3.2c0 1-1 1.2-1 2.2"/></svg>{%- endcapture -%}
+{%- capture ico_battery -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="15" height="8" rx="2"/><path d="M21 11.2v1.6"/><path d="M6.5 12h2.5"/></svg>{%- endcapture -%}
+{%- capture ico_cookie -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a8 8 0 1 0 8 8 3 3 0 0 1-3-3 3 3 0 0 1-3-3 4 4 0 0 1-2-2Z"/><path d="M10 10h.01M14 13h.01M11 15h.01"/></svg>{%- endcapture -%}
+{%- capture ico_box -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5-9 5-9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>{%- endcapture -%}
+{%- capture ico_drop -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6 6 11a6 6 0 0 1-12 0c0-5 6-11 6-11Z"/><path d="M8.5 19.5h7"/></svg>{%- endcapture -%}
+{%- capture ico_probiotic -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="10" r="4"/><circle cx="16" cy="15" r="3"/><path d="M9 8.5v3M7.5 10h3M16 13.8v2.4M14.8 15h2.4"/></svg>{%- endcapture -%}
+{%- capture ico_arrow -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>{%- endcapture -%}
+{%- capture ico_plus -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>{%- endcapture -%}
+{%- capture ico_minus -%}<svg class="ym-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg>{%- endcapture -%}
+{%- capture stars5 -%}<span class="ym-stars" role="img" aria-label="5 out of 5 stars">{{ ico_star }}{{ ico_star }}{{ ico_star }}{{ ico_star }}{{ ico_star }}</span>{%- endcapture -%}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  .yerba-details-{{ section.id }} {
-    --ym-pink: #F58CB5;
-    --ym-blush: #FCE5EE;
-    --ym-matcha: #7E8F5B;
-    --ym-forest: #3F4D32;
-    --ym-cream: #FFF8EF;
-    --ym-yellow: #F3E66B;
+  /* ---- Palette: 3 brand colors (green / pink / gold) + 2 neutrals ---- */
+  .ym-{{ section.id }} {
+    --ym-green: #3F4D32;
+    --ym-green-soft: #7E8F5B;
+    --ym-pink: #E0568C;
+    --ym-gold: #D4AF37;
+    --ym-ink: #15131A;
+    --ym-cream: #FBF6EE;
+    --ym-radius: clamp(1.6rem, 2.4vw, 2.4rem);
+    --ym-font-head: 'Recoleta', 'Fraunces', 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --ym-font-body: 'Volte', 'Mulish', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--ym-font-body);
   }
 
-  .yerba-details-{{ section.id }} .yerba-band {
-    background: linear-gradient(135deg, var(--ym-cream), var(--ym-blush));
-    border-radius: var(--text-boxes-radius);
-    padding: 2.4rem;
+  .ym-{{ section.id }} h2,
+  .ym-{{ section.id }} h3,
+  .ym-{{ section.id }} .title,
+  .ym-{{ section.id }} .h0,
+  .ym-{{ section.id }} .h1,
+  .ym-{{ section.id }} .h2,
+  .ym-{{ section.id }} .h3,
+  .ym-{{ section.id }} .h4 {
+    font-family: var(--ym-font-head);
+    letter-spacing: -0.01em;
   }
 
-  .yerba-details-{{ section.id }} .yerba-eyebrow {
-    color: var(--ym-forest);
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: .12em;
-    margin: 0 0 .8rem;
-    text-transform: uppercase;
-  }
+  .ym-{{ section.id }} .ym-ico { width: 2.2rem; height: 2.2rem; display: block; }
 
-  .yerba-details-{{ section.id }} .yerba-lead {
-    color: rgba(var(--color-foreground), .78);
-    font-size: 1.7rem;
-    line-height: 1.55;
-    margin: 1.2rem 0 0;
-    max-width: 74rem;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-grid {
-    display: grid;
-    gap: 1.6rem;
-    margin-top: 2.4rem;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-card {
-    background: rgb(var(--color-background));
-    border: .1rem solid rgba(var(--color-foreground), .1);
-    border-radius: var(--text-boxes-radius);
-    box-shadow: 0 .8rem 2.4rem rgba(63, 77, 50, .06);
-    padding: 2rem;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-card h3 {
-    margin: 0 0 .8rem;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-card p,
-  .yerba-details-{{ section.id }} .yerba-card li {
-    color: rgba(var(--color-foreground), .76);
-    line-height: 1.45;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-icon {
-    align-items: center;
-    background: var(--ym-blush);
-    border-radius: 50%;
-    color: var(--ym-forest);
-    display: inline-flex;
-    font-weight: 700;
-    height: 3.8rem;
-    justify-content: center;
-    margin-bottom: 1.2rem;
-    width: 3.8rem;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-list {
-    list-style: none;
-    margin: 1.2rem 0 0;
-    padding: 0;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-list li {
-    border-top: .1rem solid rgba(var(--color-foreground), .08);
-    padding: 1rem 0;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-list li:before {
-    color: var(--ym-forest);
-    content: "\2713";
-    font-weight: 700;
-    margin-right: .8rem;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-compare {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(4, minmax(18rem, 1fr));
-    margin-top: 2.4rem;
-    overflow-x: auto;
-    padding-bottom: .8rem;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-compare__col {
-    background: rgb(var(--color-background));
-    border: .1rem solid rgba(var(--color-foreground), .12);
-    border-radius: var(--text-boxes-radius);
-    min-width: 18rem;
+  /* ---- Alternating section bands ---- */
+  .ym-{{ section.id }} .ym-band {
+    border-radius: var(--ym-radius);
+    margin-top: clamp(1.6rem, 3vw, 2.8rem);
+    padding: clamp(2.8rem, 5vw, 5.4rem) clamp(1.8rem, 4vw, 4rem);
+    position: relative;
     overflow: hidden;
   }
+  .ym-{{ section.id }} .ym-band:first-child { margin-top: 0; }
 
-  .yerba-details-{{ section.id }} .yerba-compare__col strong {
-    background: rgba(var(--color-foreground), .06);
-    display: block;
-    padding: 1.2rem;
-    text-align: center;
-    text-transform: uppercase;
+  .ym-{{ section.id }} .ym-band--light {
+    background: linear-gradient(160deg, #ffffff, var(--ym-cream));
+    border: .1rem solid rgba(63, 77, 50, .1);
+  }
+  .ym-{{ section.id }} .ym-band--dark {
+    background: linear-gradient(155deg, #1d1b24 0%, #141019 58%, #1b1524 100%);
+    border: .1rem solid rgba(212, 175, 55, .26);
+    color: #F4F2EC;
+  }
+  .ym-{{ section.id }} .ym-band--dark::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: .3rem;
+    background: linear-gradient(90deg, transparent, var(--ym-gold), #f7e29a, transparent);
   }
 
-  .yerba-details-{{ section.id }} .yerba-compare__col--winner {
-    border-color: var(--ym-forest);
+  /* ---- Section heads ---- */
+  .ym-{{ section.id }} .ym-head { max-width: 76rem; margin: 0 auto clamp(2.4rem, 4vw, 3.6rem); text-align: center; }
+  .ym-{{ section.id }} .ym-eyebrow {
+    align-items: center; color: var(--ym-pink); display: inline-flex; gap: .6rem;
+    font-family: var(--ym-font-body); font-size: 1.2rem; font-weight: 700; letter-spacing: .16em;
+    margin: 0 0 1rem; text-transform: uppercase;
   }
+  .ym-{{ section.id }} .ym-eyebrow .ym-ico { width: 1.6rem; height: 1.6rem; color: var(--ym-green-soft); }
+  .ym-{{ section.id }} .ym-head h2 { margin: 0; }
+  .ym-{{ section.id }} .ym-lead { color: rgba(var(--color-foreground), .76); font-size: 1.6rem; line-height: 1.6; margin: 1.4rem 0 0; }
 
-  .yerba-details-{{ section.id }} .yerba-compare__col--winner strong {
-    background: var(--ym-forest);
-    color: #fff;
-  }
+  .ym-{{ section.id }} .ym-band--dark .ym-eyebrow { color: var(--ym-gold); }
+  .ym-{{ section.id }} .ym-band--dark .ym-eyebrow .ym-ico { color: var(--ym-pink); }
+  .ym-{{ section.id }} .ym-band--dark .ym-head h2,
+  .ym-{{ section.id }} .ym-band--dark h2,
+  .ym-{{ section.id }} .ym-band--dark h3 { color: #fff; }
+  .ym-{{ section.id }} .ym-band--dark .ym-lead { color: rgba(244, 242, 236, .76); }
 
-  .yerba-details-{{ section.id }} .yerba-steps {
-    counter-reset: step;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-step:before {
-    align-items: center;
-    background: var(--ym-forest);
-    border-radius: 50%;
-    color: #fff;
-    content: counter(step);
-    counter-increment: step;
-    display: inline-flex;
-    font-weight: 700;
-    height: 3.2rem;
-    justify-content: center;
-    margin-bottom: 1rem;
-    width: 3.2rem;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-review {
-    background: var(--ym-cream);
-  }
-
-  .yerba-details-{{ section.id }} .yerba-stars {
-    color: var(--ym-pink);
-    font-weight: 700;
-    letter-spacing: .08em;
-    margin-bottom: 1rem;
-  }
-
-  .yerba-details-{{ section.id }} .yerba-faq details {
+  /* ---- Cards ---- */
+  .ym-{{ section.id }} .ym-grid { display: grid; gap: 1.6rem; }
+  .ym-{{ section.id }} .ym-card {
     background: rgb(var(--color-background));
-    border: .1rem solid rgba(var(--color-foreground), .12);
-    border-radius: var(--text-boxes-radius);
-    margin-top: 1rem;
-    padding: 0 1.6rem;
+    border: .1rem solid rgba(var(--color-foreground), .08);
+    border-radius: var(--ym-radius);
+    box-shadow: 0 1rem 2.6rem rgba(63, 77, 50, .07);
+    padding: clamp(2rem, 3vw, 2.6rem);
   }
+  .ym-{{ section.id }} .ym-card h3 { margin: 0 0 .6rem; }
+  .ym-{{ section.id }} .ym-card p { color: rgba(var(--color-foreground), .74); line-height: 1.5; margin: 0; }
 
-  .yerba-details-{{ section.id }} .yerba-faq summary {
-    cursor: pointer;
-    font-weight: 700;
-    padding: 1.6rem 0;
+  .ym-{{ section.id }} .ym-band--dark .ym-card {
+    background: rgba(255, 255, 255, .045);
+    border-color: rgba(212, 175, 55, .22);
+    box-shadow: none;
   }
+  .ym-{{ section.id }} .ym-band--dark .ym-card p { color: rgba(244, 242, 236, .74); }
 
-  .yerba-details-{{ section.id }} .yerba-faq .rte {
-    padding-bottom: 1.6rem;
+  /* ---- Icon chip ---- */
+  .ym-{{ section.id }} .ym-chip {
+    align-items: center; border-radius: 1.4rem; display: inline-flex; height: 4.6rem; width: 4.6rem;
+    justify-content: center; margin-bottom: 1.4rem;
+    background: linear-gradient(140deg, #EAF0DD, var(--ym-cream));
+    color: var(--ym-green); border: .1rem solid rgba(63, 77, 50, .12);
   }
+  .ym-{{ section.id }} .ym-chip--pink { background: linear-gradient(140deg, #FBE0EC, #FFF4F8); color: var(--ym-pink); border-color: rgba(224, 86, 140, .18); }
+  .ym-{{ section.id }} .ym-chip--matcha { background: linear-gradient(140deg, #E4EDD2, var(--ym-cream)); color: var(--ym-green-soft); }
+
+  .ym-{{ section.id }} .ym-band--dark .ym-chip { background: rgba(212, 175, 55, .12); border-color: rgba(212, 175, 55, .3); color: var(--ym-gold); }
+  .ym-{{ section.id }} .ym-band--dark .ym-chip--pink,
+  .ym-{{ section.id }} .ym-band--dark .ym-chip--danger { background: rgba(224, 86, 140, .14); border-color: rgba(224, 86, 140, .32); color: #F2A0BE; }
+  .ym-{{ section.id }} .ym-band--dark .ym-chip--matcha { background: rgba(126, 143, 91, .16); border-color: rgba(126, 143, 91, .35); color: #BBD08A; }
+
+  /* ---- Stars ---- */
+  .ym-{{ section.id }} .ym-stars { color: var(--ym-gold); display: inline-flex; gap: .2rem; }
+  .ym-{{ section.id }} .ym-stars .ym-ico { width: 1.8rem; height: 1.8rem; }
+
+  /* ---- Hero ---- */
+  .ym-{{ section.id }} .ym-band--hero { background: linear-gradient(150deg, #FBE0EC 0%, var(--ym-cream) 52%, #E4EDD2 100%); border-color: rgba(63, 77, 50, .12); }
+  .ym-{{ section.id }} .ym-hero__inner { max-width: 70rem; position: relative; z-index: 1; }
+  .ym-{{ section.id }} .ym-hero__inner h2 { margin: .6rem 0; }
+  .ym-{{ section.id }} .ym-hero__sub { color: rgba(var(--color-foreground), .82); font-size: 1.7rem; line-height: 1.55; margin: 0 0 1rem; }
+  .ym-{{ section.id }} .ym-hero__body { color: rgba(var(--color-foreground), .72); font-size: 1.5rem; line-height: 1.6; margin: 0; max-width: 60rem; }
+  .ym-{{ section.id }} .ym-rating { align-items: center; display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 1.4rem; }
+  .ym-{{ section.id }} .ym-rating span { color: rgba(var(--color-foreground), .7); font-size: 1.4rem; }
+
+  /* ---- Check bullet list ---- */
+  .ym-{{ section.id }} .ym-checks { display: grid; gap: 1rem; list-style: none; margin: 2rem 0 0; padding: 0; }
+  .ym-{{ section.id }} .ym-checks li { align-items: flex-start; display: flex; gap: 1rem; line-height: 1.4; }
+  .ym-{{ section.id }} .ym-checks .ym-ico { color: var(--ym-green); flex-shrink: 0; margin-top: .1rem; width: 2rem; height: 2rem; }
+
+  /* ---- Badge row ---- */
+  .ym-{{ section.id }} .ym-badges { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+  .ym-{{ section.id }} .ym-badge {
+    align-items: center; background: rgb(var(--color-background)); border: .1rem solid rgba(63, 77, 50, .16);
+    border-radius: 999px; color: var(--ym-green); display: inline-flex; font-size: 1.2rem; font-weight: 700;
+    gap: .6rem; letter-spacing: .04em; padding: .7rem 1.2rem; text-transform: uppercase;
+  }
+  .ym-{{ section.id }} .ym-badge .ym-ico { color: var(--ym-pink); width: 1.6rem; height: 1.6rem; }
+
+  /* ---- CTA ---- */
+  .ym-{{ section.id }} .ym-cta { display: inline-flex; margin-top: 2.2rem; }
+  .ym-{{ section.id }} .ym-cta .button { gap: .8rem; font-family: var(--ym-font-body); }
+  .ym-{{ section.id }} .ym-micro { color: rgba(var(--color-foreground), .6); font-size: 1.3rem; margin: 1.2rem 0 0; }
+
+  /* ---- Before / After ---- */
+  .ym-{{ section.id }} .ym-ba { align-items: center; display: grid; gap: 1.6rem; }
+  .ym-{{ section.id }} .ym-ba__card { border-radius: var(--ym-radius); padding: clamp(2rem, 3vw, 2.8rem); border: .1rem solid; }
+  .ym-{{ section.id }} .ym-ba__card--before { background: #FFF4F8; border-color: rgba(224, 86, 140, .25); }
+  .ym-{{ section.id }} .ym-ba__card--after { background: #F1F6E7; border-color: rgba(63, 77, 50, .24); }
+  .ym-{{ section.id }} .ym-ba__card h3 { margin: 0 0 1.4rem; color: var(--ym-green); }
+  .ym-{{ section.id }} .ym-ba__card--before h3 { color: var(--ym-pink); }
+  .ym-{{ section.id }} .ym-ba__list { display: grid; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+  .ym-{{ section.id }} .ym-ba__list li { align-items: flex-start; color: rgba(21, 19, 26, .82); display: flex; gap: 1rem; line-height: 1.4; }
+  .ym-{{ section.id }} .ym-ba__list .ym-ico { flex-shrink: 0; width: 2rem; height: 2rem; }
+  .ym-{{ section.id }} .ym-ba__card--before .ym-ico { color: var(--ym-pink); }
+  .ym-{{ section.id }} .ym-ba__card--after .ym-ico { color: var(--ym-green); }
+  .ym-{{ section.id }} .ym-ba__arrow {
+    align-items: center; background: var(--ym-gold); border-radius: 50%; color: var(--ym-ink); display: flex;
+    height: 4.4rem; width: 4.4rem; justify-content: center; margin: 0 auto; transform: rotate(90deg);
+  }
+  .ym-{{ section.id }} .ym-compliance { color: rgba(244, 242, 236, .68); font-size: 1.4rem; font-style: italic; margin: 1.8rem auto 0; max-width: 60rem; text-align: center; }
+
+  .ym-{{ section.id }} .ym-card--ing h3 { font-size: 1.7rem; }
+
+  /* ---- Taste ---- */
+  .ym-{{ section.id }} .ym-taste { text-align: center; }
+  .ym-{{ section.id }} .ym-taste__icons { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; margin: 2rem 0; }
+  .ym-{{ section.id }} .ym-taste__icons .ym-chip { margin: 0; }
+  .ym-{{ section.id }} .ym-sensory { color: #fff; font-family: var(--ym-font-head); font-size: 2rem; line-height: 1.45; margin: 1.4rem auto 0; max-width: 56rem; }
+  .ym-{{ section.id }} .ym-steps-mini {
+    align-items: center; color: var(--ym-gold); display: inline-flex; flex-wrap: wrap; font-weight: 700;
+    gap: .8rem; justify-content: center; letter-spacing: .04em; margin-top: 1.8rem; text-transform: uppercase;
+  }
+  .ym-{{ section.id }} .ym-steps-mini .ym-ico { color: var(--ym-pink); width: 1.4rem; height: 1.4rem; }
+
+  /* ---- How to use steps ---- */
+  .ym-{{ section.id }} .ym-step { position: relative; }
+  .ym-{{ section.id }} .ym-step__n {
+    align-items: center; background: var(--ym-green); border-radius: 50%; color: #fff; display: inline-flex;
+    font-family: var(--ym-font-head); font-size: 1.3rem; font-weight: 700; height: 2.6rem; justify-content: center; position: absolute; right: 1.6rem; top: 1.6rem; width: 2.6rem;
+  }
+  .ym-{{ section.id }} .ym-tip {
+    align-items: flex-start; background: var(--ym-cream); border: .1rem dashed rgba(63, 77, 50, .3);
+    border-radius: var(--ym-radius); color: rgba(var(--color-foreground), .8); display: flex; gap: 1rem;
+    margin-top: 1.6rem; padding: 1.6rem 2rem;
+  }
+  .ym-{{ section.id }} .ym-tip .ym-ico { color: var(--ym-gold); flex-shrink: 0; }
+
+  /* ---- Comparison ---- */
+  .ym-{{ section.id }} .ym-compare { display: grid; gap: 1.2rem; grid-template-columns: repeat(4, minmax(20rem, 1fr)); overflow-x: auto; padding-bottom: 1rem; scroll-snap-type: x mandatory; }
+  .ym-{{ section.id }} .ym-compare__col { background: rgba(255, 255, 255, .05); border: .1rem solid rgba(212, 175, 55, .2); border-radius: var(--ym-radius); overflow: hidden; scroll-snap-align: start; }
+  .ym-{{ section.id }} .ym-compare__head { padding: 1.6rem; text-align: center; }
+  .ym-{{ section.id }} .ym-compare__head strong { display: block; font-family: var(--ym-font-head); font-size: 1.6rem; letter-spacing: .02em; }
+  .ym-{{ section.id }} .ym-compare__head .ym-ico { color: var(--ym-gold); margin: 0 auto .8rem; width: 2.2rem; height: 2.2rem; }
+  .ym-{{ section.id }} .ym-compare__rows { display: grid; gap: 0; list-style: none; margin: 0; padding: 1.6rem; }
+  .ym-{{ section.id }} .ym-compare__rows li { align-items: flex-start; border-top: .1rem solid rgba(255, 255, 255, .08); color: rgba(244, 242, 236, .78); display: flex; font-size: 1.4rem; gap: .8rem; line-height: 1.35; padding: 1rem 0; }
+  .ym-{{ section.id }} .ym-compare__rows li:first-child { border-top: 0; }
+  .ym-{{ section.id }} .ym-compare__rows .ym-ico { flex-shrink: 0; width: 1.8rem; height: 1.8rem; }
+  .ym-{{ section.id }} .ym-compare__col--lose .ym-compare__rows .ym-ico { color: #E58C73; }
+  .ym-{{ section.id }} .ym-compare__col--win { border-color: var(--ym-gold); box-shadow: 0 1.4rem 3rem rgba(212, 175, 55, .18); }
+  .ym-{{ section.id }} .ym-compare__col--win .ym-compare__head { background: linear-gradient(120deg, var(--ym-gold), #f7e29a); color: var(--ym-ink); position: relative; }
+  .ym-{{ section.id }} .ym-compare__col--win .ym-compare__head .ym-ico { color: var(--ym-ink); }
+  .ym-{{ section.id }} .ym-compare__col--win .ym-pickme { background: var(--ym-ink); border-radius: 999px; color: var(--ym-gold); font-size: 1rem; font-weight: 700; letter-spacing: .08em; padding: .3rem .8rem; position: absolute; right: 1rem; top: 1rem; text-transform: uppercase; }
+  .ym-{{ section.id }} .ym-compare__col--win .ym-compare__rows .ym-ico { color: var(--ym-green-soft); }
+
+  /* ---- Reviews ---- */
+  .ym-{{ section.id }} .ym-review { background: linear-gradient(160deg, #ffffff, var(--ym-cream)); }
+  .ym-{{ section.id }} .ym-review p { color: rgba(var(--color-foreground), .82); font-size: 1.5rem; line-height: 1.55; margin: 1rem 0 0; }
+  .ym-{{ section.id }} .ym-review__name { align-items: center; color: var(--ym-green); display: flex; font-size: 1.3rem; font-weight: 700; gap: .6rem; margin-top: 1.4rem; }
+  .ym-{{ section.id }} .ym-review__name .ym-ico { color: var(--ym-green-soft); width: 1.6rem; height: 1.6rem; }
+
+  /* ---- FAQ ---- */
+  .ym-{{ section.id }} .ym-faq { margin: 0 auto; max-width: 80rem; }
+  .ym-{{ section.id }} .ym-faq__item { background: rgba(255, 255, 255, .05); border: .1rem solid rgba(212, 175, 55, .22); border-radius: var(--ym-radius); margin-top: 1.2rem; overflow: hidden; }
+  .ym-{{ section.id }} .ym-faq__item summary { align-items: center; color: #fff; cursor: pointer; display: flex; font-family: var(--ym-font-head); font-size: 1.6rem; gap: 1.2rem; justify-content: space-between; list-style: none; padding: 1.8rem 2rem; }
+  .ym-{{ section.id }} .ym-faq__item summary::-webkit-details-marker { display: none; }
+  .ym-{{ section.id }} .ym-faq__ico { align-items: center; background: rgba(212, 175, 55, .16); border-radius: 50%; color: var(--ym-gold); display: inline-flex; flex-shrink: 0; height: 3rem; justify-content: center; width: 3rem; }
+  .ym-{{ section.id }} .ym-faq__ico .ym-ico { width: 1.8rem; height: 1.8rem; }
+  .ym-{{ section.id }} .ym-faq__item .ym-minus { display: none; }
+  .ym-{{ section.id }} .ym-faq__item[open] .ym-plus { display: none; }
+  .ym-{{ section.id }} .ym-faq__item[open] .ym-minus { display: inline-flex; }
+  .ym-{{ section.id }} .ym-faq__item[open] .ym-faq__ico { background: var(--ym-gold); color: var(--ym-ink); }
+  .ym-{{ section.id }} .ym-faq__a { color: rgba(244, 242, 236, .8); line-height: 1.6; padding: 0 2rem 2rem; }
+
+  /* ---- Final CTA ---- */
+  .ym-{{ section.id }} .ym-final { text-align: center; }
+  .ym-{{ section.id }} .ym-final h2 { color: #fff; margin: 0 auto; max-width: 60rem; }
+  .ym-{{ section.id }} .ym-final p { color: rgba(244, 242, 236, .82); font-size: 1.6rem; line-height: 1.6; margin: 1.6rem auto 0; max-width: 58rem; }
+  .ym-{{ section.id }} .ym-final .ym-cta { justify-content: center; }
+  .ym-{{ section.id }} .ym-final .ym-cta .button { --color-button: 212 175 55; --color-button-text: 20 20 27; }
+  .ym-{{ section.id }} .ym-final .ym-badges { justify-content: center; }
+  .ym-{{ section.id }} .ym-final .ym-badge { background: rgba(255, 255, 255, .06); border-color: rgba(212, 175, 55, .35); color: #F4F2EC; }
+  .ym-{{ section.id }} .ym-final .ym-badge .ym-ico { color: var(--ym-gold); }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
-
-    .yerba-details-{{ section.id }} .yerba-band {
-      padding: 4rem;
-    }
-
-    .yerba-details-{{ section.id }} .yerba-grid--2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .yerba-details-{{ section.id }} .yerba-grid--3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .yerba-details-{{ section.id }} .yerba-grid--4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+    .ym-{{ section.id }} .ym-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ym-{{ section.id }} .ym-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ym-{{ section.id }} .ym-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .ym-{{ section.id }} .ym-ba { grid-template-columns: 1fr auto 1fr; }
+    .ym-{{ section.id }} .ym-ba__arrow { transform: rotate(0deg); }
   }
 {%- endstyle -%}
 
-<section class="yerba-details-{{ section.id }} color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<section class="ym-{{ section.id }} color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   <div class="page-width">
-    <div class="yerba-band">
-      <p class="yerba-eyebrow">Strawberry Matcha Yerba Magic</p>
-      <h2 class="title inline-richtext {{ section.settings.heading_size }}">Calm energy that fits your routine.</h2>
-      <p class="yerba-lead">
-        Yerba Magic is an instant yerba mate powder drink with nootropics, prebiotics, probiotics, and fiber. It is made for clean energy, focus support, gut-friendly daily habits, and fewer coffee crashes.
-      </p>
-    </div>
 
-    <div class="yerba-grid yerba-grid--4">
-      <article class="yerba-card">
-        <span class="yerba-icon">1</span>
-        <h3 class="h4">Jittery Mornings</h3>
-        <p>Coffee wakes you up, then leaves you anxious and shaky.</p>
-      </article>
-      <article class="yerba-card">
-        <span class="yerba-icon">2</span>
-        <h3 class="h4">Afternoon Crash</h3>
-        <p>Focused for one hour, then useless by lunch.</p>
-      </article>
-      <article class="yerba-card">
-        <span class="yerba-icon">3</span>
-        <h3 class="h4">Snack Attacks</h3>
-        <p>Tired brain keeps asking for sugar.</p>
-      </article>
-      <article class="yerba-card">
-        <span class="yerba-icon">4</span>
-        <h3 class="h4">Gut Drama</h3>
-        <p>Coffee and energy drinks leave your stomach complaining.</p>
-      </article>
-    </div>
+    {%- comment -%} 1. Hero — LIGHT {%- endcomment -%}
+    <div class="ym-band ym-band--light ym-band--hero">
+      <div class="ym-hero__inner">
+        <div class="ym-rating">{{ stars5 }}<span>Loved by clean energy drinkers</span></div>
+        <p class="ym-eyebrow">{{ ico_bolt }} Strawberry Matcha Yerba Magic</p>
+        <h2 class="title {{ section.settings.heading_size }}">Calm Energy That Hits Different</h2>
+        <p class="ym-hero__sub">You know that weird middle-ground where coffee wakes you up… but also makes you feel slightly insane? Yerba Magic was made for that.</p>
+        <p class="ym-hero__body">One scoop gives you clean yerba mate energy, focus support, gut-friendly ingredients, and a fruity iced taste that feels more like a treat than a health drink.</p>
 
-    <div class="yerba-grid yerba-grid--3">
-      <article class="yerba-card">
-        <h3 class="h3">Clean Energy, No Crash</h3>
-        <p>Feel awake without coffee jitters, anxiety, or the hard afternoon crash.</p>
-      </article>
-      <article class="yerba-card">
-        <h3 class="h3">Sharper Focus</h3>
-        <p>Supports productivity, studying, and mental clarity when your brain feels slow.</p>
-      </article>
-      <article class="yerba-card">
-        <h3 class="h3">Gut-Friendly Support</h3>
-        <p>Prebiotics, probiotics, and fiber help support digestion and routine.</p>
-      </article>
-      <article class="yerba-card">
-        <h3 class="h3">Quieter Cravings</h3>
-        <p>Helps support fullness so customers feel less tempted to snack.</p>
-      </article>
-      <article class="yerba-card">
-        <h3 class="h3">Fruity Iced Taste</h3>
-        <p>Cold, fruity, creamy, lightly sweet, and easy to look forward to.</p>
-      </article>
-      <article class="yerba-card">
-        <h3 class="h3">Easy Daily Routine</h3>
-        <p>One scoop mixes fast with cold water, ice, or a frother.</p>
-      </article>
-    </div>
-
-    <div class="yerba-grid yerba-grid--2">
-      <article class="yerba-card">
-        <h2 class="h2">What's Inside The Scoop?</h2>
-        <ul class="yerba-list">
-          <li>Yerba mate extract for smooth plant-based energy.</li>
-          <li>L-theanine to help calm the caffeine edge.</li>
-          <li>Lion's Mane to support mental clarity and focus.</li>
-          <li>Chicory inulin, apple fiber, citrus pectin, and pea fiber for gut-friendly fullness.</li>
-          <li>Probiotics to support a healthier daily routine.</li>
-          <li>Allulose and stevia for sweet flavor without heavy sugar.</li>
+        <ul class="ym-checks">
+          <li>{{ ico_check }}<span>Smooth plant-based energy</span></li>
+          <li>{{ ico_check }}<span>Supports focus and mental clarity</span></li>
+          <li>{{ ico_check }}<span>Prebiotics, probiotics, and fiber</span></li>
+          <li>{{ ico_check }}<span>Helps support fullness and fewer cravings</span></li>
+          <li>{{ ico_check }}<span>No harsh coffee crash</span></li>
         </ul>
-      </article>
-      <article class="yerba-card">
-        <h2 class="h2">From Coffee Chaos To Calm Focus</h2>
-        <ul class="yerba-list">
-          <li>Smooth energy from yerba mate.</li>
-          <li>Focused without feeling wired.</li>
-          <li>Easier morning routine.</li>
-          <li>Supports fullness and fewer cravings.</li>
-          <li>Gut-friendly daily drink.</li>
-        </ul>
-        <p><strong>It is not a magic weight-loss potion.</strong> It is a better daily drink that helps your routine feel easier.</p>
-      </article>
+
+        <div class="ym-cta"><a class="button button--primary" href="#MainContent">Try Yerba Magic Today {{ ico_arrow }}</a></div>
+        <p class="ym-micro">30 servings &nbsp;|&nbsp; Strawberry Matcha Flavor &nbsp;|&nbsp; Easy to mix cold</p>
+
+        <div class="ym-badges">
+          <span class="ym-badge">{{ ico_box }} 30 Servings</span>
+          <span class="ym-badge">{{ ico_leaf }} Plant-Based</span>
+          <span class="ym-badge">{{ ico_drop }} Low Sugar</span>
+          <span class="ym-badge">{{ ico_gut }} Gut Support</span>
+          <span class="ym-badge">{{ ico_bolt }} No Crash Energy</span>
+        </div>
+      </div>
     </div>
 
-    <div class="yerba-band">
-      <p class="yerba-eyebrow">Comparison</p>
-      <h2 class="h1">Why people switch to Yerba Magic</h2>
-      <div class="yerba-compare">
-        <div class="yerba-compare__col">
-          <strong>Coffee</strong>
-          <ul class="yerba-list">
-            <li>Can cause jitters.</li>
-            <li>Can upset stomach.</li>
-            <li>Afternoon crash.</li>
+    {%- comment -%} 2. Problem — DARK {%- endcomment -%}
+    <div class="ym-band ym-band--dark">
+      <div class="ym-head">
+        <p class="ym-eyebrow">{{ ico_coffee }} The Daily Struggle</p>
+        <h2 class="h1">Coffee Had A Good Run… But Your Body Wants Better</h2>
+        <p class="ym-lead">Coffee is great until it starts fighting back. The jitters. The stomach drama. The 2PM crash that feels like someone unplugged your brain.</p>
+      </div>
+      <div class="ym-grid ym-grid--4">
+        <article class="ym-card"><span class="ym-chip ym-chip--danger">{{ ico_coffee }}</span><h3 class="h4">Jittery Mornings</h3><p>Awake, but anxious and shaky.</p></article>
+        <article class="ym-card"><span class="ym-chip ym-chip--danger">{{ ico_battery }}</span><h3 class="h4">Afternoon Crash</h3><p>Focused for one hour, useless by lunch.</p></article>
+        <article class="ym-card"><span class="ym-chip ym-chip--danger">{{ ico_cookie }}</span><h3 class="h4">Snack Attacks</h3><p>Tired brain keeps asking for sugar.</p></article>
+        <article class="ym-card"><span class="ym-chip ym-chip--danger">{{ ico_gut }}</span><h3 class="h4">Gut Drama</h3><p>Coffee and energy drinks leave your stomach complaining.</p></article>
+      </div>
+    </div>
+
+    {%- comment -%} 3. Benefits — LIGHT {%- endcomment -%}
+    <div class="ym-band ym-band--light">
+      <div class="ym-head">
+        <p class="ym-eyebrow">{{ ico_star }} The Upgrade</p>
+        <h2 class="h1">A Fruity Iced Drink That Works Smarter</h2>
+        <p class="ym-lead">Yerba Magic is like coffee, a focus drink, and a gut-friendly smoothie all packed into one easy scoop.</p>
+      </div>
+      <div class="ym-grid ym-grid--3">
+        <article class="ym-card"><span class="ym-chip">{{ ico_bolt }}</span><h3 class="h3">Clean Energy, No Crash</h3><p>Feel awake without coffee jitters, anxiety, or afternoon energy crashes.</p></article>
+        <article class="ym-card"><span class="ym-chip ym-chip--pink">{{ ico_brain }}</span><h3 class="h3">Sharper Focus, Less Brain Fog</h3><p>Supports productivity, studying, and mental clarity when your brain feels slow.</p></article>
+        <article class="ym-card"><span class="ym-chip ym-chip--matcha">{{ ico_gut }}</span><h3 class="h3">Gut-Friendly Daily Support</h3><p>Prebiotics, probiotics, and fiber help support digestion and routine.</p></article>
+        <article class="ym-card"><span class="ym-chip ym-chip--pink">{{ ico_cookie }}</span><h3 class="h3">Less Snacking, Quieter Cravings</h3><p>Helps support fullness so customers feel less tempted to snack.</p></article>
+        <article class="ym-card"><span class="ym-chip">{{ ico_straw }}</span><h3 class="h3">Fruity Taste, Easy Routine</h3><p>Mixes fast with cold water and feels like a refreshing iced treat.</p></article>
+        <article class="ym-card"><span class="ym-chip ym-chip--matcha">{{ ico_leaf }}</span><h3 class="h3">All In One Scoop</h3><p>No stacking three products. One simple daily drink does the work.</p></article>
+      </div>
+    </div>
+
+    {%- comment -%} 4. Before / After — DARK {%- endcomment -%}
+    <div class="ym-band ym-band--dark">
+      <div class="ym-head">
+        <p class="ym-eyebrow">{{ ico_arrow }} The Shift</p>
+        <h2 class="h1">From Coffee Chaos To Calm Focus</h2>
+      </div>
+      <div class="ym-ba">
+        <div class="ym-ba__card ym-ba__card--before">
+          <h3 class="h3">Before Yerba Magic</h3>
+          <ul class="ym-ba__list">
+            <li>{{ ico_x }}<span>Chugging coffee just to function</span></li>
+            <li>{{ ico_x }}<span>Shaky energy and anxious mornings</span></li>
+            <li>{{ ico_x }}<span>Brain fog during work or studying</span></li>
+            <li>{{ ico_x }}<span>Snacking because energy is low</span></li>
+            <li>{{ ico_x }}<span>Gut feels heavy or irritated</span></li>
           </ul>
         </div>
-        <div class="yerba-compare__col">
-          <strong>Energy Drinks</strong>
-          <ul class="yerba-list">
-            <li>Feels artificial.</li>
-            <li>Sugar crash risk.</li>
-            <li>Expensive daily habit.</li>
+        <div class="ym-ba__arrow">{{ ico_arrow }}</div>
+        <div class="ym-ba__card ym-ba__card--after">
+          <h3 class="h3">After Yerba Magic</h3>
+          <ul class="ym-ba__list">
+            <li>{{ ico_check }}<span>Smooth energy from yerba mate</span></li>
+            <li>{{ ico_check }}<span>Focused without feeling wired</span></li>
+            <li>{{ ico_check }}<span>Easier morning routine</span></li>
+            <li>{{ ico_check }}<span>Supports fullness and fewer cravings</span></li>
+            <li>{{ ico_check }}<span>Gut-friendly daily drink</span></li>
           </ul>
         </div>
-        <div class="yerba-compare__col">
-          <strong>Greens Powders</strong>
-          <ul class="yerba-list">
-            <li>Earthy grassy taste.</li>
-            <li>No real energy boost.</li>
-            <li>Feels like a chore.</li>
+      </div>
+      <p class="ym-compliance">It’s not a magic weight-loss potion. It’s a better daily drink that helps your routine feel easier.</p>
+    </div>
+
+    {%- comment -%} 5. Ingredients — LIGHT {%- endcomment -%}
+    <div class="ym-band ym-band--light">
+      <div class="ym-head">
+        <p class="ym-eyebrow">{{ ico_leaf }} The Formula</p>
+        <h2 class="h1">What’s Inside The Scoop?</h2>
+      </div>
+      <div class="ym-grid ym-grid--3">
+        <article class="ym-card ym-card--ing"><span class="ym-chip">{{ ico_bolt }}</span><h3>Yerba Mate Extract</h3><p>Natural caffeine for smooth energy without the coffee crash.</p></article>
+        <article class="ym-card ym-card--ing"><span class="ym-chip ym-chip--pink">{{ ico_brain }}</span><h3>L-Theanine</h3><p>Helps calm the caffeine rush and support steady focus.</p></article>
+        <article class="ym-card ym-card--ing"><span class="ym-chip ym-chip--matcha">{{ ico_brain }}</span><h3>Lion’s Mane Mushroom</h3><p>Supports mental clarity, focus, and brain fog relief.</p></article>
+        <article class="ym-card ym-card--ing"><span class="ym-chip ym-chip--matcha">{{ ico_leaf }}</span><h3>Chicory Inulin</h3><p>Prebiotic fiber that supports gut health and digestion.</p></article>
+        <article class="ym-card ym-card--ing"><span class="ym-chip ym-chip--pink">{{ ico_straw }}</span><h3>Apple Fiber</h3><p>Helps support fullness and better daily digestion.</p></article>
+        <article class="ym-card ym-card--ing"><span class="ym-chip">{{ ico_drop }}</span><h3>Citrus Pectin</h3><p>Supports gut health and helps promote a fuller feeling.</p></article>
+        <article class="ym-card ym-card--ing"><span class="ym-chip ym-chip--matcha">{{ ico_leaf }}</span><h3>Pea Fiber</h3><p>Adds fiber support for digestion and less snacking.</p></article>
+        <article class="ym-card ym-card--ing"><span class="ym-chip ym-chip--matcha">{{ ico_probiotic }}</span><h3>Probiotics</h3><p>Supports a healthier gut and regular daily routine.</p></article>
+        <article class="ym-card ym-card--ing"><span class="ym-chip ym-chip--pink">{{ ico_drop }}</span><h3>Allulose + Stevia</h3><p>Sweet flavor without heavy sugar.</p></article>
+      </div>
+    </div>
+
+    {%- comment -%} 6. Taste — DARK {%- endcomment -%}
+    <div class="ym-band ym-band--dark ym-taste">
+      <p class="ym-eyebrow">{{ ico_straw }} The Flavor</p>
+      <h2 class="h1">Tastes Like A Treat. Acts Like A Routine.</h2>
+      <p class="ym-lead">This is not one of those earthy powders you force down while questioning your life choices. Strawberry Matcha tastes fruity, smooth, and refreshing — especially over ice.</p>
+      <div class="ym-taste__icons">
+        <span class="ym-chip ym-chip--matcha">{{ ico_scoop }}</span>
+        <span class="ym-chip ym-chip--pink">{{ ico_straw }}</span>
+        <span class="ym-chip">{{ ico_cup }}</span>
+        <span class="ym-chip ym-chip--matcha">{{ ico_leaf }}</span>
+      </div>
+      <p class="ym-sensory">Cold. Fruity. Creamy. Lightly sweet. The kind of drink you actually look forward to in the morning.</p>
+      <p class="ym-steps-mini">Scoop {{ ico_arrow }} Shake {{ ico_arrow }} Ice {{ ico_arrow }} Sip {{ ico_arrow }} Done</p>
+    </div>
+
+    {%- comment -%} 7. How to use — LIGHT {%- endcomment -%}
+    <div class="ym-band ym-band--light">
+      <div class="ym-head">
+        <p class="ym-eyebrow">{{ ico_cup }} Easy Ritual</p>
+        <h2 class="h1">Your 30-Second Morning Upgrade</h2>
+      </div>
+      <div class="ym-grid ym-grid--4">
+        <article class="ym-card ym-step"><span class="ym-step__n">1</span><span class="ym-chip">{{ ico_scoop }}</span><h3 class="h4">Scoop</h3><p>Add one scoop to cold water.</p></article>
+        <article class="ym-card ym-step"><span class="ym-step__n">2</span><span class="ym-chip ym-chip--pink">{{ ico_shaker }}</span><h3 class="h4">Shake</h3><p>Shake, stir, or froth.</p></article>
+        <article class="ym-card ym-step"><span class="ym-step__n">3</span><span class="ym-chip">{{ ico_cup }}</span><h3 class="h4">Ice</h3><p>Pour over ice.</p></article>
+        <article class="ym-card ym-step"><span class="ym-step__n">4</span><span class="ym-chip ym-chip--matcha">{{ ico_straw }}</span><h3 class="h4">Sip</h3><p>Drink before work, studying, errands, or your afternoon slump.</p></article>
+      </div>
+      <div class="ym-tip">{{ ico_bolt }}<p><strong>Pro tip:</strong> If you like it lighter, add more water. If you want it smoother, use a frother.</p></div>
+    </div>
+
+    {%- comment -%} 8. Comparison — DARK {%- endcomment -%}
+    <div class="ym-band ym-band--dark">
+      <div class="ym-head">
+        <p class="ym-eyebrow">{{ ico_check }} The Comparison</p>
+        <h2 class="h1">Why People Switch To Yerba Magic</h2>
+      </div>
+      <div class="ym-compare">
+        <div class="ym-compare__col ym-compare__col--lose">
+          <div class="ym-compare__head">{{ ico_coffee }}<strong>Coffee</strong></div>
+          <ul class="ym-compare__rows">
+            <li>{{ ico_x }}<span>Can cause jitters</span></li>
+            <li>{{ ico_x }}<span>Can upset stomach</span></li>
+            <li>{{ ico_x }}<span>Afternoon crash</span></li>
           </ul>
         </div>
-        <div class="yerba-compare__col yerba-compare__col--winner">
-          <strong>Yerba Magic</strong>
-          <ul class="yerba-list">
-            <li>Smooth caffeine curve.</li>
-            <li>Focus plus gut support.</li>
-            <li>Fruity iced flavor.</li>
+        <div class="ym-compare__col ym-compare__col--lose">
+          <div class="ym-compare__head">{{ ico_bolt }}<strong>Energy Drinks</strong></div>
+          <ul class="ym-compare__rows">
+            <li>{{ ico_x }}<span>Feels artificial</span></li>
+            <li>{{ ico_x }}<span>Sugar crash risk</span></li>
+            <li>{{ ico_x }}<span>Expensive daily habit</span></li>
+          </ul>
+        </div>
+        <div class="ym-compare__col ym-compare__col--lose">
+          <div class="ym-compare__head">{{ ico_leaf }}<strong>Greens Powders</strong></div>
+          <ul class="ym-compare__rows">
+            <li>{{ ico_x }}<span>Earthy grassy taste</span></li>
+            <li>{{ ico_x }}<span>No real energy boost</span></li>
+            <li>{{ ico_x }}<span>Feels like a chore</span></li>
+          </ul>
+        </div>
+        <div class="ym-compare__col ym-compare__col--win">
+          <div class="ym-compare__head"><span class="ym-pickme">Best Pick</span>{{ ico_straw }}<strong>Yerba Magic</strong></div>
+          <ul class="ym-compare__rows">
+            <li>{{ ico_check }}<span>Smooth caffeine curve</span></li>
+            <li>{{ ico_check }}<span>Focus plus gut support</span></li>
+            <li>{{ ico_check }}<span>Fruity iced flavor</span></li>
+            <li>{{ ico_check }}<span>Easy daily routine</span></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="yerba-grid yerba-grid--4 yerba-steps">
-      <article class="yerba-card yerba-step">
-        <h3 class="h4">Scoop</h3>
-        <p>Add one scoop to cold water.</p>
-      </article>
-      <article class="yerba-card yerba-step">
-        <h3 class="h4">Shake</h3>
-        <p>Shake, stir, or froth.</p>
-      </article>
-      <article class="yerba-card yerba-step">
-        <h3 class="h4">Ice</h3>
-        <p>Pour over ice.</p>
-      </article>
-      <article class="yerba-card yerba-step">
-        <h3 class="h4">Sip</h3>
-        <p>Drink before work, studying, errands, or your afternoon slump.</p>
-      </article>
-    </div>
-
-    <div class="yerba-grid yerba-grid--3">
-      <article class="yerba-card yerba-review">
-        <div class="yerba-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Yerba Magic gives me smooth energy, helps me stay focused, and feels way easier on my stomach."</p>
-      </article>
-      <article class="yerba-card yerba-review">
-        <div class="yerba-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"This became my iced morning drink. It tastes fruity and helps quiet down my snack cravings during the day."</p>
-      </article>
-      <article class="yerba-card yerba-review">
-        <div class="yerba-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"No weird crash, no gas-station drink vibes, just clean energy and focus."</p>
-      </article>
-    </div>
-
-    <div class="yerba-grid yerba-grid--2">
-      <div class="yerba-faq">
-        <h2 class="h1">Still thinking about it?</h2>
-        <details>
-          <summary>Will this make me jittery?</summary>
-          <div class="rte"><p>No, it is made for smoother energy. Yerba mate gives natural caffeine, while L-theanine helps take the sharp edge off so you feel more focused, not shaky.</p></div>
-        </details>
-        <details>
-          <summary>Does it actually help with cravings?</summary>
-          <div class="rte"><p>Many customers say it helps them feel fuller and snack less. It is not a magic weight-loss drink, but the fiber, prebiotics, and steady energy can help support better daily habits.</p></div>
-        </details>
-        <details>
-          <summary>Does it taste like a health powder?</summary>
-          <div class="rte"><p>No, it tastes more like a fruity iced drink. Some people find it sweet, so you can add more water or ice to make it lighter.</p></div>
-        </details>
+    {%- comment -%} 9. Social proof — LIGHT {%- endcomment -%}
+    <div class="ym-band ym-band--light">
+      <div class="ym-head">
+        <p class="ym-eyebrow">{{ ico_star }} Real Talk</p>
+        <h2 class="h1">Why Customers Keep Coming Back</h2>
       </div>
-      <div class="yerba-band">
-        <p class="yerba-eyebrow">Ready?</p>
-        <h2 class="h1">Stop borrowing energy from tomorrow.</h2>
-        <p class="yerba-lead">Clean energy, sharper focus, gut-friendly support, and fruity iced flavor in one easy scoop.</p>
-        <a class="button button--primary" href="#MainContent">Try Yerba Magic Today</a>
+      <div class="ym-grid ym-grid--3">
+        <article class="ym-card ym-review">{{ stars5 }}<p>“I used to rely on coffee every morning, but it always left me jittery and crashing by the afternoon. Yerba Magic gives me smooth energy, helps me stay focused, and feels way easier on my stomach.”</p><span class="ym-review__name">{{ ico_check }} Clean energy drinker</span></article>
+        <article class="ym-card ym-review">{{ stars5 }}<p>“This became my iced morning drink. It tastes fruity, gives me clean energy, and helps quiet down my snack cravings during the day.”</p><span class="ym-review__name">{{ ico_check }} Iced drink convert</span></article>
+        <article class="ym-card ym-review">{{ stars5 }}<p>“I wanted something better than canned energy drinks, and this finally feels like it. No weird crash, no gas-station drink vibes, just clean energy and focus.”</p><span class="ym-review__name">{{ ico_check }} Former energy-drink fan</span></article>
       </div>
     </div>
+
+    {%- comment -%} 10. FAQ — DARK {%- endcomment -%}
+    <div class="ym-band ym-band--dark">
+      <div class="ym-head">
+        <p class="ym-eyebrow">{{ ico_brain }} Good Questions</p>
+        <h2 class="h1">Still Thinking About It?</h2>
+      </div>
+      <div class="ym-faq">
+        <details class="ym-faq__item">
+          <summary>Will this make me jittery?<span class="ym-faq__ico"><span class="ym-plus">{{ ico_plus }}</span><span class="ym-minus">{{ ico_minus }}</span></span></summary>
+          <div class="ym-faq__a">No, it’s made for smoother energy. Yerba mate gives natural caffeine, while L-theanine helps take the sharp edge off so you feel more focused, not shaky.</div>
+        </details>
+        <details class="ym-faq__item">
+          <summary>Does it actually help with cravings?<span class="ym-faq__ico"><span class="ym-plus">{{ ico_plus }}</span><span class="ym-minus">{{ ico_minus }}</span></span></summary>
+          <div class="ym-faq__a">Many customers say it helps them feel fuller and snack less. It’s not a magic weight-loss drink, but the fiber, prebiotics, and steady energy can help support better daily habits.</div>
+        </details>
+        <details class="ym-faq__item">
+          <summary>Is it better than coffee?<span class="ym-faq__ico"><span class="ym-plus">{{ ico_plus }}</span><span class="ym-minus">{{ ico_minus }}</span></span></summary>
+          <div class="ym-faq__a">If coffee gives you crashes, jitters, or stomach issues, this is a better daily option. It gives you energy and focus without that wired-then-tired feeling.</div>
+        </details>
+        <details class="ym-faq__item">
+          <summary>Does it taste like a health powder?<span class="ym-faq__ico"><span class="ym-plus">{{ ico_plus }}</span><span class="ym-minus">{{ ico_minus }}</span></span></summary>
+          <div class="ym-faq__a">No, it tastes more like a fruity iced drink. Some people find it sweet, so you can simply add more water or ice to make it lighter.</div>
+        </details>
+        <details class="ym-faq__item">
+          <summary>Is it worth the price?<span class="ym-faq__ico"><span class="ym-plus">{{ ico_plus }}</span><span class="ym-minus">{{ ico_minus }}</span></span></summary>
+          <div class="ym-faq__a">Yes, especially if it replaces coffee, energy drinks, or sugary canned drinks. Each tub gives you 30 servings, so it becomes a simple daily routine instead of buying drinks every day.</div>
+        </details>
+      </div>
+    </div>
+
+    {%- comment -%} 11. Final CTA — DARK {%- endcomment -%}
+    <div class="ym-band ym-band--dark ym-final">
+      <p class="ym-eyebrow">{{ ico_bolt }} Last Thing</p>
+      <h2 class="h1">Ready To Stop Borrowing Energy From Tomorrow?</h2>
+      <p>Yerba Magic gives you the energy you want today without the crash waiting for you later. Clean energy, sharper focus, gut-friendly support, and fruity iced flavor in one scoop.</p>
+      <div class="ym-cta"><a class="button button--primary" href="#MainContent">Get Yerba Magic Now {{ ico_arrow }}</a></div>
+      <div class="ym-badges">
+        <span class="ym-badge">{{ ico_box }} 30 Servings Per Tub</span>
+        <span class="ym-badge">{{ ico_leaf }} Plant-Based</span>
+        <span class="ym-badge">{{ ico_drop }} Low Sugar</span>
+        <span class="ym-badge">{{ ico_brain }} Nootropics + Gut Support</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -389,21 +529,12 @@
       "type": "select",
       "id": "heading_size",
       "options": [
-        {
-          "value": "h2",
-          "label": "Small"
-        },
-        {
-          "value": "h1",
-          "label": "Medium"
-        },
-        {
-          "value": "h0",
-          "label": "Large"
-        }
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
       ],
-      "default": "h1",
-      "label": "Heading size"
+      "default": "h0",
+      "label": "Hero heading size"
     },
     {
       "type": "color_scheme",
@@ -433,9 +564,7 @@
     }
   ],
   "presets": [
-    {
-      "name": "Yerba Magic details"
-    }
+    { "name": "Yerba Magic details" }
   ]
 }
 {% endschema %}
