@@ -27,6 +27,19 @@
           "type": "price",
           "settings": {}
         },
+        "yerba_intro": {
+          "type": "text",
+          "settings": {
+            "text": "Calm energy, focus support, gut-friendly ingredients, and strawberry matcha flavor without the coffee crash.",
+            "text_style": "subtitle"
+          }
+        },
+        "yerba_trust": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"yerba-product-proof\"><div class=\"yerba-product-proof__stars\">&#9733;&#9733;&#9733;&#9733;&#9733; <span>Loved by clean energy drinkers</span></div><div class=\"yerba-product-proof__badges\"><span>30 Servings</span><span>Plant-Based</span><span>Low Sugar</span><span>Gut Support</span><span>No Crash Energy</span></div></div><style>.yerba-product-proof{margin:1.6rem 0}.yerba-product-proof__stars{font-weight:700;color:#3F4D32}.yerba-product-proof__stars span{color:rgba(var(--color-foreground),.75);font-weight:400;margin-left:.6rem}.yerba-product-proof__badges{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.2rem}.yerba-product-proof__badges span{border:.1rem solid rgba(var(--color-foreground),.14);border-radius:999px;font-size:1.1rem;font-weight:700;padding:.6rem 1rem;text-transform:uppercase;background:rgba(var(--color-background),.65)}</style>"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -45,9 +58,33 @@
             "show_gift_card_recipient": true
           }
         },
+        "yerba_offer": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"yerba-offer-box\"><strong>30 servings per tub</strong><span>Mixes cold in seconds. Best over ice before work, studying, errands, or the afternoon slump.</span></div><style>.yerba-offer-box{border:.1rem solid rgba(var(--color-foreground),.12);border-radius:var(--buttons-radius);padding:1.4rem;background:linear-gradient(135deg,rgba(252,229,238,.58),rgba(255,248,239,.9));display:grid;gap:.4rem}.yerba-offer-box strong{text-transform:uppercase}.yerba-offer-box span{color:rgba(var(--color-foreground),.72);font-size:1.4rem}</style>"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
+        },
+        "yerba_details_tab": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Why customers switch",
+            "icon": "heart",
+            "content": "<p>Coffee can be jittery, energy drinks can feel artificial, and greens powders can taste earthy. Yerba Magic gives you a fruity iced routine with smooth plant-based energy, focus support, and gut-friendly ingredients.</p>",
+            "page": ""
+          }
+        },
+        "yerba_ingredients_tab": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Key ingredients",
+            "icon": "leaf",
+            "content": "<p>Yerba mate extract, L-theanine, Lion's Mane, chicory inulin, apple fiber, citrus pectin, pea fiber, probiotics, allulose, and stevia.</p>",
+            "page": ""
+          }
         },
         "share": {
           "type": "share",
@@ -60,10 +97,15 @@
         "vendor",
         "title",
         "price",
+        "yerba_intro",
+        "yerba_trust",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "yerba_offer",
         "description",
+        "yerba_details_tab",
+        "yerba_ingredients_tab",
         "share"
       ],
       "settings": {
@@ -80,6 +122,15 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "yerba_magic_details": {
+      "type": "yerba-magic-details",
+      "settings": {
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "related-products": {
@@ -103,6 +154,7 @@
   },
   "order": [
     "main",
+    "yerba_magic_details",
     "related-products"
   ]
 }
