@@ -1,0 +1,441 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .yerba-details-{{ section.id }} {
+    --ym-pink: #F58CB5;
+    --ym-blush: #FCE5EE;
+    --ym-matcha: #7E8F5B;
+    --ym-forest: #3F4D32;
+    --ym-cream: #FFF8EF;
+    --ym-yellow: #F3E66B;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-band {
+    background: linear-gradient(135deg, var(--ym-cream), var(--ym-blush));
+    border-radius: var(--text-boxes-radius);
+    padding: 2.4rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-eyebrow {
+    color: var(--ym-forest);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    margin: 0 0 .8rem;
+    text-transform: uppercase;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-lead {
+    color: rgba(var(--color-foreground), .78);
+    font-size: 1.7rem;
+    line-height: 1.55;
+    margin: 1.2rem 0 0;
+    max-width: 74rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-grid {
+    display: grid;
+    gap: 1.6rem;
+    margin-top: 2.4rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-card {
+    background: rgb(var(--color-background));
+    border: .1rem solid rgba(var(--color-foreground), .1);
+    border-radius: var(--text-boxes-radius);
+    box-shadow: 0 .8rem 2.4rem rgba(63, 77, 50, .06);
+    padding: 2rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-card h3 {
+    margin: 0 0 .8rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-card p,
+  .yerba-details-{{ section.id }} .yerba-card li {
+    color: rgba(var(--color-foreground), .76);
+    line-height: 1.45;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-icon {
+    align-items: center;
+    background: var(--ym-blush);
+    border-radius: 50%;
+    color: var(--ym-forest);
+    display: inline-flex;
+    font-weight: 700;
+    height: 3.8rem;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    width: 3.8rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-list {
+    list-style: none;
+    margin: 1.2rem 0 0;
+    padding: 0;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-list li {
+    border-top: .1rem solid rgba(var(--color-foreground), .08);
+    padding: 1rem 0;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-list li:before {
+    color: var(--ym-forest);
+    content: "\2713";
+    font-weight: 700;
+    margin-right: .8rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-compare {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, minmax(18rem, 1fr));
+    margin-top: 2.4rem;
+    overflow-x: auto;
+    padding-bottom: .8rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-compare__col {
+    background: rgb(var(--color-background));
+    border: .1rem solid rgba(var(--color-foreground), .12);
+    border-radius: var(--text-boxes-radius);
+    min-width: 18rem;
+    overflow: hidden;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-compare__col strong {
+    background: rgba(var(--color-foreground), .06);
+    display: block;
+    padding: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-compare__col--winner {
+    border-color: var(--ym-forest);
+  }
+
+  .yerba-details-{{ section.id }} .yerba-compare__col--winner strong {
+    background: var(--ym-forest);
+    color: #fff;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-steps {
+    counter-reset: step;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-step:before {
+    align-items: center;
+    background: var(--ym-forest);
+    border-radius: 50%;
+    color: #fff;
+    content: counter(step);
+    counter-increment: step;
+    display: inline-flex;
+    font-weight: 700;
+    height: 3.2rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 3.2rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-review {
+    background: var(--ym-cream);
+  }
+
+  .yerba-details-{{ section.id }} .yerba-stars {
+    color: var(--ym-pink);
+    font-weight: 700;
+    letter-spacing: .08em;
+    margin-bottom: 1rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-faq details {
+    background: rgb(var(--color-background));
+    border: .1rem solid rgba(var(--color-foreground), .12);
+    border-radius: var(--text-boxes-radius);
+    margin-top: 1rem;
+    padding: 0 1.6rem;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-faq summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 1.6rem 0;
+  }
+
+  .yerba-details-{{ section.id }} .yerba-faq .rte {
+    padding-bottom: 1.6rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .yerba-details-{{ section.id }} .yerba-band {
+      padding: 4rem;
+    }
+
+    .yerba-details-{{ section.id }} .yerba-grid--2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .yerba-details-{{ section.id }} .yerba-grid--3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .yerba-details-{{ section.id }} .yerba-grid--4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+{%- endstyle -%}
+
+<section class="yerba-details-{{ section.id }} color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="yerba-band">
+      <p class="yerba-eyebrow">Strawberry Matcha Yerba Magic</p>
+      <h2 class="title inline-richtext {{ section.settings.heading_size }}">Calm energy that fits your routine.</h2>
+      <p class="yerba-lead">
+        Yerba Magic is an instant yerba mate powder drink with nootropics, prebiotics, probiotics, and fiber. It is made for clean energy, focus support, gut-friendly daily habits, and fewer coffee crashes.
+      </p>
+    </div>
+
+    <div class="yerba-grid yerba-grid--4">
+      <article class="yerba-card">
+        <span class="yerba-icon">1</span>
+        <h3 class="h4">Jittery Mornings</h3>
+        <p>Coffee wakes you up, then leaves you anxious and shaky.</p>
+      </article>
+      <article class="yerba-card">
+        <span class="yerba-icon">2</span>
+        <h3 class="h4">Afternoon Crash</h3>
+        <p>Focused for one hour, then useless by lunch.</p>
+      </article>
+      <article class="yerba-card">
+        <span class="yerba-icon">3</span>
+        <h3 class="h4">Snack Attacks</h3>
+        <p>Tired brain keeps asking for sugar.</p>
+      </article>
+      <article class="yerba-card">
+        <span class="yerba-icon">4</span>
+        <h3 class="h4">Gut Drama</h3>
+        <p>Coffee and energy drinks leave your stomach complaining.</p>
+      </article>
+    </div>
+
+    <div class="yerba-grid yerba-grid--3">
+      <article class="yerba-card">
+        <h3 class="h3">Clean Energy, No Crash</h3>
+        <p>Feel awake without coffee jitters, anxiety, or the hard afternoon crash.</p>
+      </article>
+      <article class="yerba-card">
+        <h3 class="h3">Sharper Focus</h3>
+        <p>Supports productivity, studying, and mental clarity when your brain feels slow.</p>
+      </article>
+      <article class="yerba-card">
+        <h3 class="h3">Gut-Friendly Support</h3>
+        <p>Prebiotics, probiotics, and fiber help support digestion and routine.</p>
+      </article>
+      <article class="yerba-card">
+        <h3 class="h3">Quieter Cravings</h3>
+        <p>Helps support fullness so customers feel less tempted to snack.</p>
+      </article>
+      <article class="yerba-card">
+        <h3 class="h3">Fruity Iced Taste</h3>
+        <p>Cold, fruity, creamy, lightly sweet, and easy to look forward to.</p>
+      </article>
+      <article class="yerba-card">
+        <h3 class="h3">Easy Daily Routine</h3>
+        <p>One scoop mixes fast with cold water, ice, or a frother.</p>
+      </article>
+    </div>
+
+    <div class="yerba-grid yerba-grid--2">
+      <article class="yerba-card">
+        <h2 class="h2">What's Inside The Scoop?</h2>
+        <ul class="yerba-list">
+          <li>Yerba mate extract for smooth plant-based energy.</li>
+          <li>L-theanine to help calm the caffeine edge.</li>
+          <li>Lion's Mane to support mental clarity and focus.</li>
+          <li>Chicory inulin, apple fiber, citrus pectin, and pea fiber for gut-friendly fullness.</li>
+          <li>Probiotics to support a healthier daily routine.</li>
+          <li>Allulose and stevia for sweet flavor without heavy sugar.</li>
+        </ul>
+      </article>
+      <article class="yerba-card">
+        <h2 class="h2">From Coffee Chaos To Calm Focus</h2>
+        <ul class="yerba-list">
+          <li>Smooth energy from yerba mate.</li>
+          <li>Focused without feeling wired.</li>
+          <li>Easier morning routine.</li>
+          <li>Supports fullness and fewer cravings.</li>
+          <li>Gut-friendly daily drink.</li>
+        </ul>
+        <p><strong>It is not a magic weight-loss potion.</strong> It is a better daily drink that helps your routine feel easier.</p>
+      </article>
+    </div>
+
+    <div class="yerba-band">
+      <p class="yerba-eyebrow">Comparison</p>
+      <h2 class="h1">Why people switch to Yerba Magic</h2>
+      <div class="yerba-compare">
+        <div class="yerba-compare__col">
+          <strong>Coffee</strong>
+          <ul class="yerba-list">
+            <li>Can cause jitters.</li>
+            <li>Can upset stomach.</li>
+            <li>Afternoon crash.</li>
+          </ul>
+        </div>
+        <div class="yerba-compare__col">
+          <strong>Energy Drinks</strong>
+          <ul class="yerba-list">
+            <li>Feels artificial.</li>
+            <li>Sugar crash risk.</li>
+            <li>Expensive daily habit.</li>
+          </ul>
+        </div>
+        <div class="yerba-compare__col">
+          <strong>Greens Powders</strong>
+          <ul class="yerba-list">
+            <li>Earthy grassy taste.</li>
+            <li>No real energy boost.</li>
+            <li>Feels like a chore.</li>
+          </ul>
+        </div>
+        <div class="yerba-compare__col yerba-compare__col--winner">
+          <strong>Yerba Magic</strong>
+          <ul class="yerba-list">
+            <li>Smooth caffeine curve.</li>
+            <li>Focus plus gut support.</li>
+            <li>Fruity iced flavor.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="yerba-grid yerba-grid--4 yerba-steps">
+      <article class="yerba-card yerba-step">
+        <h3 class="h4">Scoop</h3>
+        <p>Add one scoop to cold water.</p>
+      </article>
+      <article class="yerba-card yerba-step">
+        <h3 class="h4">Shake</h3>
+        <p>Shake, stir, or froth.</p>
+      </article>
+      <article class="yerba-card yerba-step">
+        <h3 class="h4">Ice</h3>
+        <p>Pour over ice.</p>
+      </article>
+      <article class="yerba-card yerba-step">
+        <h3 class="h4">Sip</h3>
+        <p>Drink before work, studying, errands, or your afternoon slump.</p>
+      </article>
+    </div>
+
+    <div class="yerba-grid yerba-grid--3">
+      <article class="yerba-card yerba-review">
+        <div class="yerba-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Yerba Magic gives me smooth energy, helps me stay focused, and feels way easier on my stomach."</p>
+      </article>
+      <article class="yerba-card yerba-review">
+        <div class="yerba-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"This became my iced morning drink. It tastes fruity and helps quiet down my snack cravings during the day."</p>
+      </article>
+      <article class="yerba-card yerba-review">
+        <div class="yerba-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"No weird crash, no gas-station drink vibes, just clean energy and focus."</p>
+      </article>
+    </div>
+
+    <div class="yerba-grid yerba-grid--2">
+      <div class="yerba-faq">
+        <h2 class="h1">Still thinking about it?</h2>
+        <details>
+          <summary>Will this make me jittery?</summary>
+          <div class="rte"><p>No, it is made for smoother energy. Yerba mate gives natural caffeine, while L-theanine helps take the sharp edge off so you feel more focused, not shaky.</p></div>
+        </details>
+        <details>
+          <summary>Does it actually help with cravings?</summary>
+          <div class="rte"><p>Many customers say it helps them feel fuller and snack less. It is not a magic weight-loss drink, but the fiber, prebiotics, and steady energy can help support better daily habits.</p></div>
+        </details>
+        <details>
+          <summary>Does it taste like a health powder?</summary>
+          <div class="rte"><p>No, it tastes more like a fruity iced drink. Some people find it sweet, so you can add more water or ice to make it lighter.</p></div>
+        </details>
+      </div>
+      <div class="yerba-band">
+        <p class="yerba-eyebrow">Ready?</p>
+        <h2 class="h1">Stop borrowing energy from tomorrow.</h2>
+        <p class="yerba-lead">Clean energy, sharper focus, gut-friendly support, and fruity iced flavor in one easy scoop.</p>
+        <a class="button button--primary" href="#MainContent">Try Yerba Magic Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Yerba Magic details",
+  "settings": [
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Yerba Magic details"
+    }
+  ]
+}
+{% endschema %}
